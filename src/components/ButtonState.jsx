@@ -1,9 +1,15 @@
+import { useState } from "react";
+
 const ButtonState = () => {
-    let count = 0
+
+    const arrayState = useState(0);
+    
+    const stateNumber = arrayState[0];
+    const stateFunction = arrayState[1];
+
     const handleClick = () =>{
-        count = count +1;
-        console.log('handleClick: ' + count)
+        stateFunction(stateNumber+1)
     }
-    return <button onClick={handleClick}>button State: {count}</button>
+    return <button onClick={handleClick}>button State: {stateNumber}</button>
 }
 export default ButtonState;
