@@ -2,14 +2,12 @@ import { useState } from "react";
 
 const ButtonState = () => {
 
-    const arrayState = useState(0);
-    
-    const stateNumber = arrayState[0];
-    const stateFunction = arrayState[1];
+    const [count, setCount] = useState(1);
 
     const handleClick = () =>{
-        stateFunction(stateNumber+1)
+        setCount(count+1)
     }
-    return <button onClick={handleClick}>button State: {stateNumber}</button>
+    return <button onClick={handleClick}>button State: {count}</button>
 }
 export default ButtonState;
+
